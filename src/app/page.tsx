@@ -22,40 +22,40 @@ function SidePanel() {
       <h2 className="text-xl mb-4 font-semibold tracking-wider text-naranja">Mission Overview MAGI</h2>
 
       <div className="space-y-4">
-        <p className="text-azul">NERV Planetoid Observer v1.03.5</p>
+        <p className="label">NERV Planetoid Observer v1.03.5</p>
 
         <div className="border-t border-naranja pt-3">
           <h3 className="text-lg mb-2 text-naranja">Planetary Specifications</h3>
           <ul className="list-disc list-inside space-y-1 text-sm text-azul">
             <li>
-              Diameter: <span className="text-gris">12,742 km</span>
+              <span className="text-gris">Diameter:</span> <span className="text-gris">12,742 km</span>
             </li>
             <li>
-              Mass: <span className="text-gris">5.97 × 10^24 kg</span>
+              <span className="text-azul">Mass:</span> <span className="text-gris">5.97 × 10^24 kg</span>
             </li>
             <li>
-              Surface temperature: <span className="text-gris">-60°C to 45°C</span>
+              <span className="text-azul">Surface temperature:</span> <span className="text-gris">-60°C to 45°C</span>
             </li>
             <li>
-              Atmosphere: <span className="text-gris">Nitrogen, Oxygen, Argon</span>
+              <span className="text-azul">Atmosphere:</span> <span className="text-gris">Nitrogen, Oxygen, Argon</span>
             </li>
           </ul>
         </div>
 
         <div className="border-t border-naranja pt-3">
           <h3 className="text-lg mb-2 text-naranja warning">Anomaly Detection</h3>
-          <p className="text-sm text-azul">
+          <p className="text-sm text-gris">
             Current scan reveals unusual patterns in the planetary core. Further investigation required.
           </p>
           <div className="mt-2 flex items-center">
             <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-            <span className="text-xs text-gris">Active monitoring</span>
+            <span className="text-xs text-azul">Active monitoring</span>
           </div>
         </div>
 
         <div className="border-t border-naranja pt-3">
           <h3 className="text-lg mb-2 text-naranja">Access Level</h3>
-          <p className="text-sm text-azul">CLASSIFIED - NERV Personnel Only</p>
+          <p className="text-sm text-gris">CLASSIFIED - NERV Personnel Only</p>
           <p className="text-xs mt-2 text-naranja/80 warning">WARNING: Unauthorized access will be prosecuted</p>
         </div>
       </div>
