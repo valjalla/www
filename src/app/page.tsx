@@ -26,25 +26,25 @@ function SidePanel() {
 
         <div className="border-t border-naranja pt-3">
           <h3 className="text-lg mb-2 text-naranja">Planetary Specifications</h3>
-          <ul className="list-disc list-inside space-y-1 text-sm text-azul">
+          <ul className="list-inside space-y-1 text-sm">
             <li>
-              <span className="text-gris">Diameter:</span> <span className="text-gris">12,742 km</span>
+              <span className="text-label">Diameter:</span> <span className="text-value">12,742 km</span>
             </li>
             <li>
-              <span className="text-azul">Mass:</span> <span className="text-gris">5.97 × 10^24 kg</span>
+              <span className="text-label">Mass:</span> <span className="text-value">5.97 × 10^24 kg</span>
             </li>
             <li>
-              <span className="text-azul">Surface temperature:</span> <span className="text-gris">-60°C to 45°C</span>
+              <span className="text-label">Surface temperature:</span> <span className="text-value">-60°C to 45°C</span>
             </li>
             <li>
-              <span className="text-azul">Atmosphere:</span> <span className="text-gris">Nitrogen, Oxygen, Argon</span>
+              <span className="text-label">Atmosphere:</span> <span className="text-value">Nitrogen, Oxygen, Argon</span>
             </li>
           </ul>
         </div>
 
         <div className="border-t border-naranja pt-3">
           <h3 className="text-lg mb-2 text-naranja warning">Anomaly Detection</h3>
-          <p className="text-sm text-gris">
+          <p className="text-sm text-value">
             Current scan reveals unusual patterns in the planetary core. Further investigation required.
           </p>
           <div className="mt-2 flex items-center">
