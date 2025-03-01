@@ -153,3 +153,12 @@ body::after {
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+
+@keyframes warning-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.warning {
+  animation: warning-blink 1s infinite;
+}

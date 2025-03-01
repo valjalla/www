@@ -43,7 +43,7 @@ function SidePanel() {
         </div>
 
         <div className="border-t border-naranja pt-3">
-          <h3 className="text-lg mb-2 text-naranja">Anomaly Detection</h3>
+          <h3 className="text-lg mb-2 text-naranja warning">Anomaly Detection</h3>
           <p className="text-sm text-azul">
             Current scan reveals unusual patterns in the planetary core. Further investigation required.
           </p>
@@ -56,7 +56,7 @@ function SidePanel() {
         <div className="border-t border-naranja pt-3">
           <h3 className="text-lg mb-2 text-naranja">Access Level</h3>
           <p className="text-sm text-azul">CLASSIFIED - NERV Personnel Only</p>
-          <p className="text-xs mt-2 text-naranja/80">WARNING: Unauthorized access will be prosecuted</p>
+          <p className="text-xs mt-2 text-naranja/80 warning">WARNING: Unauthorized access will be prosecuted</p>
         </div>
       </div>
     </aside>
