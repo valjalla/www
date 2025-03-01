@@ -47,7 +47,7 @@ export function SPhere() {
       color: 0x0077ff,
       emissive: 0x001133,
       transparent: true,
-      opacity: 0.2,
+      opacity: 0.3,
       shininess: 100,
     });
     const sphere = new THREE.Mesh(geometry, innerMaterial);

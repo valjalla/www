@@ -49,7 +49,7 @@ function Footer() {
 function SidePanel() {
   return (
     <aside className="w-[30%] border border-steel p-4 text-naranja overflow-y-auto">
-      <h2 className="text-xl mb-4 font-semibold tracking-wider text-naranja">Mission Overview MAGI</h2>
+      <h2 className="text-xl mb-4 font-semibold tracking-wider text-naranja">alexander swanson</h2>
       <div className="space-y-4">
         <p className="label">NERV Planetoid Observer v1.03.5</p>
         <div className="border-t border-naranja pt-3">
