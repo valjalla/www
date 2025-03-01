@@ -1,13 +1,15 @@
-import { SPhere } from "./ui";
+import { HexaGrid, SPhere } from "./ui";
 
 export default function App() {
   return (
-    <div className="h-screen p-4">
-      <div className="bg-black/70 h-full flex flex-col space-y-4">
+    <div className="h-screen p-4 flex flex-col">
+      <Header />
+      <div className="bg-black/70 flex-1 flex flex-col space-y-4 my-4">
         <div className="flex flex-1 overflow-hidden space-x-4">
           <SidePanel />
           <main className="flex-1 relative">
             <Planetoid />
+            <AlienChars />
             <div className="grid-lines absolute inset-0 pointer-events-none z-0">
               {Array.from({ length: 10 }, (_, i) => (
                 <>
@@ -27,9 +29,21 @@ export default function App() {
           </main>
         </div>
       </div>
-      <AlienChars />
+      <Footer />
     </div>
   );
+}
+
+function Header() {
+  return (
+    <header className="w-full border border-steel h-16 flex justify-end items-center px-4">
+      <HexaGrid />
+    </header>
+  );
+}
+
+function Footer() {
+  return <footer className="w-full border border-steel h-12"></footer>;
 }
 
 function SidePanel() {

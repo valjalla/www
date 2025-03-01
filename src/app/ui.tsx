@@ -97,25 +97,25 @@ export function SPhere() {
 }
 
 export function HexaGrid() {
-  const [activeHexagons, setActiveHexagons] = useState([0, 2, 4]);
+  const [activeHexagons, setActiveHexagons] = useState([true, false, true, false, true]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * 5);
-      setActiveHexagons((prev) =>
-        prev.includes(randomIndex) ? prev.filter((i) => i !== randomIndex) : [...prev, randomIndex]
-      );
+    const intervalId = setInterval(() => {
+      setActiveHexagons((prev) => {
+        const newActiveHexagons = [...prev];
+        const randomIndex = Math.floor(Math.random() * newActiveHexagons.length);
+        newActiveHexagons[randomIndex] = !newActiveHexagons[randomIndex];
+        return newActiveHexagons;
+      });
     }, 2000);
-    return () => clearInterval(interval);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="flex justify-between mb-4">
-      {Array.from({ length: 5 }, (_, i) => (
-        <div
-          key={i}
-          className={`w-8 h-9 border border-cyan-400 clip-hexagon ${activeHexagons.includes(i) ? "bg-cyan-400/30" : ""}`}
-        ></div>
+    <div className="flex space-x-4">
+      {activeHexagons.map((isActive, index) => (
+        <div key={index} className={`hexagon ${isActive ? "active" : ""}`}></div>
       ))}
     </div>
   );

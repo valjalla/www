@@ -26,11 +26,10 @@
   }
 }
 
-main {
-  background-color: rgba(20, 20, 20, 0.7);
-}
-
-aside {
+main,
+aside,
+header,
+footer {
   background-color: rgba(20, 20, 20, 0.7);
 }
 
@@ -70,6 +69,20 @@ body::after {
   z-index: 110;
   pointer-events: none;
   animation: flicker 5s infinite;
+}
+
+.hexagon {
+  width: 30px;
+  height: 35px;
+  background-color: transparent;
+  position: relative;
+  border: 1px solid #00ffff;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: all 0.3s ease;
+}
+
+.hexagon.active {
+  background-color: rgba(0, 255, 255, 0.3);
 }
 
 @keyframes scanline {
