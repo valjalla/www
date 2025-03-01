@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  font-family: "Courier New", monospace;
+  overflow: hidden;
+  position: relative;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* crt scanline effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 100;
+  pointer-events: none;
+  animation: scanline 10s linear infinite;
+}
+
+/* crt flicker */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 110;
+  pointer-events: none;
+  animation: flicker 5s infinite;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 4px;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  5% {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  10% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  15% {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  30% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  80% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  95% {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes warning-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    width: 75%;
+  }
+  50% {
+    opacity: 0.8;
+    width: 77%;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-300px);
+  }
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+.animate-warning-blink {
+  animation: warning-blink 1s infinite;
+}
+
+.animate-status-pulse {
+  animation: status-pulse 4s infinite;
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
