@@ -6,6 +6,7 @@
   --color-azul: #00ffff;
   --color-naranja: #ff4800;
   --color-gris: #aaaaaa;
+  --color-steel: #364153;
 
   --color-label: var(--color-gris);
   --color-value: var(--color-azul);
@@ -25,10 +26,12 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+main {
+  background-color: rgba(20, 20, 20, 0.7);
+}
+
+aside {
+  background-color: rgba(20, 20, 20, 0.7);
 }
 
 html,
