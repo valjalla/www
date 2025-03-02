@@ -38,7 +38,8 @@ export default function App() {
 
 function Header() {
   return (
-    <header className="w-full border border-steel h-16 flex justify-end items-center px-4">
+    <header className="w-full border border-steel h-16 flex justify-between items-center px-4">
+      <h1 className="text-2xl font-semibold tracking-wider text-naranja">λ</h1>
       <HexaGrid />
     </header>
   );
@@ -93,7 +94,7 @@ function Planetoid() {
         className="absolute inset-0 flex justify-center items-center pointer-events-none z-10"
         id="planetary-core-crosshair"
       >
-        <div className="relative w-64 h-64">
+        <div className="relative w-48 h-48">
           <div className="absolute top-1/2 left-0 w-full h-0.5 bg-naranja/70 transform -translate-y-1/2" />
           <div className="absolute top-0 left-1/2 w-0.5 h-full bg-naranja/70 transform -translate-x-1/2" />
           <div className="absolute inset-0 border-2 border-naranja/40 rounded-full" />
