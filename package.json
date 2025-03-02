@@ -1,6 +1,6 @@
 {
   "name": "www",
-  "version": "0.1.0",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.0.3",
+    "next": "^15.2.0",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "three": "^0.174.0"
@@ -23,6 +23,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "postcss": "^8",
+    "prettier": "3.5.2",
     "tailwindcss": "^4.0.9",
     "typescript": "^5"
   }

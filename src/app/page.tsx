@@ -13,7 +13,7 @@ export default function App() {
               <AlienChars />
               <div className="grid-lines absolute inset-0 pointer-events-none z-0">
                 {Array.from({ length: 10 }, (_, i) => (
-                  <>
+                  <div key={`container${i}`}>
                     <div
                       key={`h${i}`}
                       className="absolute w-full h-px bg-gray-500/10"
@@ -24,38 +24,54 @@ export default function App() {
                       className="absolute w-px h-full bg-gray-500/10"
                       style={{ left: `${(i + 1) * 10}%` }}
                     ></div>
-                  </>
+                  </div>
                 ))}
               </div>
+              <FocusSpray />
             </main>
           </div>
         </div>
         <Footer />
-
-        <FocusSpray />
       </div>
     </div>
   );
 }
 
-
 function Header() {
   return (
     <header className="w-full border border-steel h-16 flex justify-between items-center px-4">
-      <h1 className="text-2xl font-semibold tracking-wider text-naranja">λ</h1>
+      <h1 className="text-2xl font-semibold tracking-wider text-naranja animate-warning">λ</h1>
       <HexaGrid />
     </header>
   );
 }
 
 function Footer() {
-  return <footer className="w-full border border-steel h-12"></footer>;
+  return (
+    <footer
+      className="flex space-x-4 justify-center items-center w-full border border-steel h-12 px-4"
+      data-targetting="no-crosshair"
+    >
+      <a
+        className="text-naranja font-semibold animate-warning"
+        href="https://github.com/valjalla"
+      >
+        github
+      </a>
+      <a
+        className="text-naranja font-semibold animate-warning"
+        href="https://www.linkedin.com/in/alexander-swanson"
+      >
+        linkedin
+      </a>
+    </footer>
+  );
 }
 
 function SidePanel() {
   return (
     <aside className="w-[30%] border border-steel p-4 text-naranja overflow-y-auto">
-      <h2 className="text-xl font-semibold tracking-wider warning text-naranja">alexander swanson</h2>
+      <h2 className="text-xl font-semibold tracking-wider text-naranja">alexander swanson</h2>
       <p className="label mb-4 text-azul">software engineer</p>
       <div className="space-y-4">
         <div>
@@ -82,7 +98,7 @@ function SidePanel() {
         <div className="border-t border-naranja pt-3">
           <h3 className="text-lg mb-2 text-naranja">Access Level</h3>
           <p className="text-sm text-gris">CLASSIFIED - NERV Personnel Only</p>
-          <p className="text-xs mt-2 text-naranja/80 warning">WARNING: Unauthorized access will be prosecuted</p>
+          <p className="text-xs mt-2 text-naranja/80 animate-warning">WARNING: Unauthorized access will be prosecuted</p>
         </div>
       </div>
     </aside>
