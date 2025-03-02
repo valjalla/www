@@ -42,7 +42,6 @@ body {
   position: relative;
   background-color: #000000;
   color: #ffffff;
-  /* cursor: crosshair; */
   cursor:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='0.75' fill='%23ff4800'/><line x1='12' y1='3' x2='12' y2='21' stroke='%23ff4800' stroke-width='1.5'/><line x1='3' y1='12' x2='21' y2='12' stroke='%23ff4800' stroke-width='1.5'/></svg>")
       12 12,

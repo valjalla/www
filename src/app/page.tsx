@@ -7,7 +7,6 @@ export default function App() {
         <Header />
         <div className="bg-black/70 flex-1 flex flex-col space-y-4 my-4">
           <div className="flex flex-1 overflow-hidden space-x-4">
-            <SidePanel />
             <main className="flex-1 relative">
               <Planetoid />
               <AlienChars />
@@ -29,6 +28,7 @@ export default function App() {
               </div>
               <FocusSpray />
             </main>
+            <SidePanel />
           </div>
         </div>
         <Footer />
@@ -64,13 +64,19 @@ function Footer() {
       >
         linkedin
       </a>
+      <a
+        className="text-naranja font-semibold animate-warning"
+        href="todo"
+      >
+        resume
+      </a>
     </footer>
   );
 }
 
 function SidePanel() {
   return (
-    <aside className="w-[30%] border border-steel p-4 text-naranja overflow-y-auto">
+    <aside className="w-[35%] border border-steel p-4 text-naranja overflow-y-auto">
       <h2 className="text-xl font-semibold tracking-wider text-naranja">alexander swanson</h2>
       <p className="label mb-4 text-azul">software engineer</p>
       <div className="space-y-4">
