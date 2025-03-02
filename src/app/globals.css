@@ -49,6 +49,10 @@ body {
     crosshair;
 }
 
+h3 {
+  font-weight: 600;
+}
+
 a:hover {
   cursor:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='0.75' fill='%2300ffff'/><line x1='12' y1='3' x2='12' y2='21' stroke='%2300ffff' stroke-width='1.5'/><line x1='3' y1='12' x2='21' y2='12' stroke='%2300ffff' stroke-width='1.5'/></svg>")
@@ -85,8 +89,11 @@ body::after {
   animation: flicker 5s infinite;
 }
 
-h3 {
-  font-weight: 600;
+::selection {
+  background-color: rgba(0, 255, 255, 0.2);
+  outline: 1px solid rgba(0, 255, 255, 0.4);
+  transition: all 0.1s ease;
+  color: var(--color-azul);
 }
 
 .hexagon {
@@ -101,6 +108,36 @@ h3 {
 
 .hexagon.active {
   background-color: rgba(0, 255, 255, 0.3);
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+.animate-warning-blink {
+  animation: warning-blink 1s infinite;
+}
+
+.animate-status-pulse {
+  animation: status-pulse 4s infinite;
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.selection-naranja {
+  background-color: rgba(255, 72, 0, 0.2);
+  outline: 1px solid rgba(255, 72, 0, 0.4);
+  transition: all 0.1s ease;
+  color: var(--color-naranja);
+}
+
+.selection-gris {
+  background-color: rgba(170, 170, 170, 0.2);
+  outline: 1px solid rgba(170, 170, 170, 0.4);
+  transition: all 0.1s ease;
+  color: var(--color-gris);
 }
 
 @keyframes scanline {
@@ -183,22 +220,6 @@ h3 {
   }
 }
 
-.animate-blink {
-  animation: blink 2s infinite;
-}
-
-.animate-warning-blink {
-  animation: warning-blink 1s infinite;
-}
-
-.animate-status-pulse {
-  animation: status-pulse 4s infinite;
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
 @keyframes warning-blink {
   0%,
   100% {
@@ -207,12 +228,4 @@ h3 {
   50% {
     opacity: 0.7;
   }
-}
-
-/* FocusSpray highlight and flash effects */
-.focus-spray-highlight {
-  background-color: rgba(255, 72, 0, 0.2);
-  outline: 1px solid rgba(255, 72, 0, 0.4);
-  transition: all 0.1s ease;
-  color: var(--color-naranja);
 }
