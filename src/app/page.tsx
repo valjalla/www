@@ -49,29 +49,21 @@ function Footer() {
 function SidePanel() {
   return (
     <aside className="w-[30%] border border-steel p-4 text-naranja overflow-y-auto">
-      <h2 className="text-xl mb-4 font-semibold tracking-wider text-naranja">alexander swanson</h2>
+      <h2 className="text-xl font-semibold tracking-wider warning text-naranja">alexander swanson</h2>
+      <p className="label mb-4 text-azul">software engineer</p>
       <div className="space-y-4">
-        <p className="label">NERV Planetoid Observer v1.03.5</p>
-        <div className="border-t border-naranja pt-3">
-          <h3 className="text-lg mb-2 text-naranja">Planetary Specifications</h3>
+        <div>
+          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">ABOUT</h3>
           <ul className="list-inside space-y-1 text-sm">
-            <li>
-              <span className="text-label">Diameter:</span> <span className="text-value">12,742 km</span>
-            </li>
-            <li>
-              <span className="text-label">Mass:</span> <span className="text-value">5.97 × 10^24 kg</span>
-            </li>
-            <li>
-              <span className="text-label">Surface temperature:</span> <span className="text-value">-60°C to 45°C</span>
-            </li>
-            <li>
-              <span className="text-label">Atmosphere:</span> <span className="text-value">Nitrogen, Oxygen, Argon</span>
+            <li className="text-azul">
+              5 yrs of experience. bachelor's degree in computer science. proficient in javascript, typescript, python, c,
+              and swift. currently working on an internal cloud-service platform.
             </li>
           </ul>
         </div>
 
-        <div className="border-t border-naranja pt-3">
-          <h3 className="text-lg mb-2 text-naranja warning">Anomaly Detection</h3>
+        <div>
+          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">PROJECTS</h3>
           <p className="text-sm text-value">
             Current scan reveals unusual patterns in the planetary core. Further investigation required.
           </p>
