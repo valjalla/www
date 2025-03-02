@@ -84,8 +84,8 @@ function SidePanel() {
           <h3 className="text-lg mb-2 text-naranja border-b border-naranja">ABOUT</h3>
           <ul className="list-inside space-y-1 text-sm">
             <li className="text-azul">
-              5 yrs of experience. bachelor's degree in computer science. proficient in javascript, typescript, python, c,
-              and swift. currently working on an internal cloud-service platform.
+              5 yrs of experience. bachelor's degree in computer science. fan of typescript, python, c,
+              and swift. currently tinkering with raylib and 3d graphics.
             </li>
           </ul>
         </div>
