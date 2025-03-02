@@ -2,34 +2,36 @@ import { HexaGrid, SPhere } from "./ui";
 
 export default function App() {
   return (
-    <div className="h-screen p-4 flex flex-col">
-      <Header />
-      <div className="bg-black/70 flex-1 flex flex-col space-y-4 my-4">
-        <div className="flex flex-1 overflow-hidden space-x-4">
-          <SidePanel />
-          <main className="flex-1 relative">
-            <Planetoid />
-            <AlienChars />
-            <div className="grid-lines absolute inset-0 pointer-events-none z-0">
-              {Array.from({ length: 10 }, (_, i) => (
-                <>
-                  <div
-                    key={`h${i}`}
-                    className="absolute w-full h-px bg-gray-500/10"
-                    style={{ top: `${(i + 1) * 10}%` }}
-                  ></div>
-                  <div
-                    key={`v${i}`}
-                    className="absolute w-px h-full bg-gray-500/10"
-                    style={{ left: `${(i + 1) * 10}%` }}
-                  ></div>
-                </>
-              ))}
-            </div>
-          </main>
+    <div className="h-screen p-4 flex flex-col items-center">
+      <div className="w-full max-w-[1600px] flex-1 flex flex-col">
+        <Header />
+        <div className="bg-black/70 flex-1 flex flex-col space-y-4 my-4">
+          <div className="flex flex-1 overflow-hidden space-x-4">
+            <SidePanel />
+            <main className="flex-1 relative">
+              <Planetoid />
+              <AlienChars />
+              <div className="grid-lines absolute inset-0 pointer-events-none z-0">
+                {Array.from({ length: 10 }, (_, i) => (
+                  <>
+                    <div
+                      key={`h${i}`}
+                      className="absolute w-full h-px bg-gray-500/10"
+                      style={{ top: `${(i + 1) * 10}%` }}
+                    ></div>
+                    <div
+                      key={`v${i}`}
+                      className="absolute w-px h-full bg-gray-500/10"
+                      style={{ left: `${(i + 1) * 10}%` }}
+                    ></div>
+                  </>
+                ))}
+              </div>
+            </main>
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
