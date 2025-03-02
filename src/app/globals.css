@@ -208,3 +208,11 @@ h3 {
 .warning {
   animation: warning-blink 1s infinite;
 }
+
+/* FocusSpray highlight and flash effects */
+.focus-spray-highlight {
+  background-color: rgba(255, 72, 0, 0.2);
+  outline: 1px solid rgba(255, 72, 0, 0.4);
+  transition: all 0.1s ease;
+  color: var(--color-naranja);
+}

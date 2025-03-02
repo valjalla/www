@@ -1,4 +1,4 @@
-import { HexaGrid, SPhere } from "./ui";
+import { HexaGrid, SPhere, FocusSpray } from "./ui";
 
 export default function App() {
   return (
@@ -31,10 +31,13 @@ export default function App() {
           </div>
         </div>
         <Footer />
+
+        <FocusSpray />
       </div>
     </div>
   );
 }
+
 
 function Header() {
   return (

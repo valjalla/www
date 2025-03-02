@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, MouseEvent } from "react";
 import * as THREE from "three";
 
 export function SPhere() {
@@ -117,6 +117,70 @@ export function HexaGrid() {
       {activeHexagons.map((isActive, index) => (
         <div key={index} className={`hexagon ${isActive ? "active" : ""}`}></div>
       ))}
+    </div>
+  );
+}
+
+export function FocusSpray() {
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPoint, setStartPoint] = useState({ x: 0, y: 0 });
+  const [endPoint, setEndPoint] = useState({ x: 0, y: 0 });
+
+  const handleMouseDown = useCallback((e: MouseEvent) => {
+    // Get position relative to the container
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    setStartPoint({ x, y });
+    setEndPoint({ x, y });
+    setIsDragging(true);
+  }, []);
+
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!isDragging) return;
+
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      setEndPoint({ x, y });
+    },
+    [isDragging]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  // Calculate selection box dimensions
+  const selectionStyles = {
+    left: Math.min(startPoint.x, endPoint.x),
+    top: Math.min(startPoint.y, endPoint.y),
+    width: Math.abs(endPoint.x - startPoint.x),
+    height: Math.abs(endPoint.y - startPoint.y),
+  };
+
+  return (
+    <div
+      className="absolute inset-0 z-50"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+      style={{ pointerEvents: "auto" }}
+    >
+      {isDragging && (
+        <div
+          className="absolute border border-naranja/60 bg-naranja/10 z-50"
+          style={selectionStyles}
+        >
+          <div className="absolute top-0 right-0 text-xs text-naranja px-1">
+            {Math.round(selectionStyles.width)} x {Math.round(selectionStyles.height)}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
