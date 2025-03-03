@@ -133,6 +133,18 @@ function SidePanel() {
               </a>
               <p>classic.</p>
             </li>
+
+            <li>
+              <a
+                className="text-azul uppercase"
+                href="https://en.wikipedia.org/wiki/A_Dance_with_Dragons"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                a dance with dragons / g.r.r.m.
+              </a>
+              <p>the last good book in the series.</p>
+            </li>
           </ul>
         </div>
       </div>
