@@ -29,7 +29,7 @@ export default function App() {
               </div>
               <FocusSpray />
             </main>
-            <SidePanel />
+            <Infopan />
           </div>
         </div>
         <Footer />
@@ -67,27 +67,28 @@ function Footer() {
   );
 }
 
-function SidePanel() {
+function Infopan() {
   return (
     <aside className="w-[35%] border border-steel p-4 text-naranja overflow-y-auto">
       <h2 className="text-2xl font-semibold tracking-wider text-naranja">alexander</h2>
       <p className="label mb-4 text-azul">engi</p>
       <div className="space-y-4">
-        <p className="text-sm text-gris">
-          programmer @ usa. industry ~ 2020. c, go, js, ts, py, swift. messing with raylib and game dev.
-        </p>
-        <p className="text-sm text-gris">
-          currently reading through{" "}
-          <a
-            className="text-azul"
-            href="http://neuralnetworksanddeeplearning.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            neilsen's book
-          </a>{" "}
-          on neural networks and deep learning.
-        </p>
+        <div className="space-y-4 text-sm text-gris">
+          <p>programmer @ usa. industry ~ 2020. c, go, js, ts, py, swift. messing with raylib and game dev.</p>
+          <p>
+            currently reading through{" "}
+            <a
+              className="text-azul"
+              href="http://neuralnetworksanddeeplearning.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              neilsen's book
+            </a>{" "}
+            on neural networks and deep learning.
+          </p>
+          <p>you can learn anything in two weeks.</p>
+        </div>
         <div>
           <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LITERATURE</h3>
           <p className="text-sm text-gris uppercase mb-4">reading/read recently</p>
@@ -99,7 +100,7 @@ function SidePanel() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                neural networks and deep learning / nielsen
+                # neural networks and deep learning / nielsen
               </a>
               <p>
                 excellent intro to neural nets. great first principles approach to the math and theory. lots of good formula
@@ -114,7 +115,7 @@ function SidePanel() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                the three body problem / liu
+                # the three body problem / liu
               </a>
               <p>
                 excellent hard sci-fi. great world building, interesting characters. very unique take on the first contact
@@ -129,7 +130,7 @@ function SidePanel() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                contact / sagan
+                # contact / sagan
               </a>
               <p>classic.</p>
             </li>
@@ -141,7 +142,7 @@ function SidePanel() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                a dance with dragons / g.r.r.m.
+                # a dance with dragons / g.r.r.m.
               </a>
               <p>the last good book in the series.</p>
             </li>
