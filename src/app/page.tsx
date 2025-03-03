@@ -64,12 +64,6 @@ function Footer() {
       >
         linkedin
       </a>
-      <a
-        className="text-naranja font-semibold animate-warning"
-        href="todo"
-      >
-        resume
-      </a>
     </footer>
   );
 }
@@ -78,14 +72,14 @@ function SidePanel() {
   return (
     <aside className="w-[35%] border border-steel p-4 text-naranja overflow-y-auto">
       <h2 className="text-xl font-semibold tracking-wider text-naranja">alexander swanson</h2>
-      <p className="label mb-4 text-azul">software engineer</p>
+      <p className="label mb-4 text-azul">engineer @ software</p>
       <div className="space-y-4">
         <div>
           <h3 className="text-lg mb-2 text-naranja border-b border-naranja">ABOUT</h3>
           <ul className="list-inside space-y-1 text-sm">
             <li className="text-azul">
-              5 yrs of experience. bachelor's degree in computer science. fan of typescript, python, c,
-              and swift. currently tinkering with raylib and 3d graphics.
+              5 yrs of experience. bachelor's degree in computer science. fan of typescript, python, c, and swift. currently
+              tinkering with raylib and 3d graphics.
             </li>
           </ul>
         </div>
