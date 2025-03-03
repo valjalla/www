@@ -55,7 +55,7 @@ function Footer() {
     >
       <div>
         <span className="text-xs text-gris">{">" + " "}</span>
-        <span className="text-xs text-naranja">v{version}</span>
+        <span className="text-xs text-naranja animate-warning">v{version}</span>
       </div>
       <div className="space-x-4 text-naranja font-semibold animate-warning">
         <a href="https://github.com/valjalla">github</a>
@@ -64,6 +64,33 @@ function Footer() {
       </div>
       <div />
     </footer>
+  );
+}
+
+function AlienChars() {
+  const hebrewChars = "אבגדהוזחטיכלמנסעפצקרשת";
+  const greekChars = "αβγδεζηθλμνξπρφχψω";
+  const cyrillicChars = "бвгджзклпфцчьэюя";
+  const alienChars = hebrewChars + greekChars + cyrillicChars;
+
+  return (
+    <div className="alien-chars absolute inset-0 pointer-events-none z-0">
+      {Array.from({ length: 20 }, (_, i) => {
+        const char = alienChars[Math.floor(Math.random() * alienChars.length)];
+        const left = Math.random() * 90 + 5;
+        const top = Math.random() * 90 + 5;
+        const opacity = 0.5 + Math.random() * 0.5;
+        return (
+          <div
+            key={i}
+            className="absolute text-naranja/40 text-sm"
+            style={{ left: `${left}%`, top: `${top}%`, opacity }}
+          >
+            {char}
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
@@ -169,33 +196,6 @@ function Planetoid() {
           <div className="absolute top-[20%] left-[20%] w-[60%] h-[60%] border border-naranja/20 rounded-full" />
         </div>
       </div>
-    </div>
-  );
-}
-
-function AlienChars() {
-  const hebrewChars = "אבגדהוזחטיכלמנסעפצקרשת";
-  const greekChars = "αβγδεζηθλμνξπρφχψω";
-  const cyrillicChars = "бвгджзклпфцчьэюя";
-  const alienChars = hebrewChars + greekChars + cyrillicChars;
-
-  return (
-    <div className="alien-chars absolute inset-0 pointer-events-none z-0">
-      {Array.from({ length: 20 }, (_, i) => {
-        const char = alienChars[Math.floor(Math.random() * alienChars.length)];
-        const left = Math.random() * 90 + 5;
-        const top = Math.random() * 90 + 5;
-        const opacity = 0.5 + Math.random() * 0.5;
-        return (
-          <div
-            key={i}
-            className="absolute text-naranja/40 text-sm"
-            style={{ left: `${left}%`, top: `${top}%`, opacity }}
-          >
-            {char}
-          </div>
-        );
-      })}
     </div>
   );
 }

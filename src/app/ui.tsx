@@ -115,7 +115,10 @@ export function HexaGrid() {
   return (
     <div className="flex space-x-4">
       {activeHexagons.map((isActive, index) => (
-        <div key={index} className={`hexagon ${isActive ? "active" : ""}`}></div>
+        <div
+          key={index}
+          className={`hexagon ${isActive ? "active" : ""}`}
+        ></div>
       ))}
     </div>
   );
@@ -127,7 +130,6 @@ export function FocusSpray() {
   const [endPoint, setEndPoint] = useState({ x: 0, y: 0 });
 
   const handleMouseDown = useCallback((e: MouseEvent) => {
-    // Get position relative to the container
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -154,7 +156,6 @@ export function FocusSpray() {
     setIsDragging(false);
   }, []);
 
-  // Calculate selection box dimensions
   const selectionStyles = {
     left: Math.min(startPoint.x, endPoint.x),
     top: Math.min(startPoint.y, endPoint.y),
