@@ -82,6 +82,8 @@ function SidePanel() {
           <a
             className="text-azul"
             href="http://neuralnetworksanddeeplearning.com/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             neilsen's book
           </a>{" "}
@@ -89,7 +91,28 @@ function SidePanel() {
         </p>
 
         <div>
-          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">contact</h3>
+          <div className="mb-4">
+            <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LITERATURE</h3>
+            <p className="text-sm text-gris uppercase">reading/read recently</p>
+          </div>
+          <div className="space-y-2">
+            <ul className="text-sm text-gris">
+              <li>
+                <a
+                  className="text-azul uppercase"
+                  href="http://neuralnetworksanddeeplearning.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  neural networks and deep learning / nielsen
+                </a>
+                <p>
+                  excellent into to neural nets. great first principles approach to the math and theory. lots of good formula
+                  derivations.
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </aside>
