@@ -76,7 +76,6 @@ function SidePanel() {
         <p className="text-sm text-gris">
           programmer @ usa. industry ~ 2020. c, go, js, ts, py, swift. messing with raylib and game dev.
         </p>
-
         <p className="text-sm text-gris">
           currently reading through{" "}
           <a
@@ -89,30 +88,52 @@ function SidePanel() {
           </a>{" "}
           on neural networks and deep learning.
         </p>
-
         <div>
-          <div className="mb-4">
-            <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LITERATURE</h3>
-            <p className="text-sm text-gris uppercase">reading/read recently</p>
-          </div>
-          <div className="space-y-2">
-            <ul className="text-sm text-gris">
-              <li>
-                <a
-                  className="text-azul uppercase"
-                  href="http://neuralnetworksanddeeplearning.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  neural networks and deep learning / nielsen
-                </a>
-                <p>
-                  excellent into to neural nets. great first principles approach to the math and theory. lots of good formula
-                  derivations.
-                </p>
-              </li>
-            </ul>
-          </div>
+          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LITERATURE</h3>
+          <p className="text-sm text-gris uppercase mb-4">reading/read recently</p>
+          <ul className="text-sm text-gris space-y-6">
+            <li>
+              <a
+                className="text-azul uppercase"
+                href="http://neuralnetworksanddeeplearning.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                neural networks and deep learning / nielsen
+              </a>
+              <p>
+                excellent intro to neural nets. great first principles approach to the math and theory. lots of good formula
+                derivations.
+              </p>
+            </li>
+
+            <li>
+              <a
+                className="text-azul uppercase"
+                href="https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                the three body problem / liu
+              </a>
+              <p>
+                excellent hard sci-fi. great world building, interesting characters. very unique take on the first contact
+                trope.
+              </p>
+            </li>
+
+            <li>
+              <a
+                className="text-azul uppercase"
+                href="https://en.wikipedia.org/wiki/Contact_(novel)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                contact / sagan
+              </a>
+              <p>classic.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </aside>
