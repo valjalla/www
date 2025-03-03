@@ -11,22 +11,7 @@ export default function App() {
             <main className="flex-1 relative">
               <Planetoid />
               <AlienChars />
-              <div className="grid-lines absolute inset-0 pointer-events-none z-0">
-                {Array.from({ length: 10 }, (_, i) => (
-                  <div key={`container${i}`}>
-                    <div
-                      key={`h${i}`}
-                      className="absolute w-full h-px bg-gray-500/10"
-                      style={{ top: `${(i + 1) * 10}%` }}
-                    ></div>
-                    <div
-                      key={`v${i}`}
-                      className="absolute w-px h-full bg-gray-500/10"
-                      style={{ left: `${(i + 1) * 10}%` }}
-                    ></div>
-                  </div>
-                ))}
-              </div>
+              <TheGrid />
               <FocusSpray />
             </main>
             <Infopan />
@@ -90,6 +75,47 @@ function AlienChars() {
           </div>
         );
       })}
+    </div>
+  );
+}
+
+function Planetoid() {
+  return (
+    <div className="relative flex justify-center items-center w-full h-full border border-steel">
+      <SPhere />
+      <div
+        className="absolute inset-0 flex justify-center items-center pointer-events-none z-10"
+        id="planetary-core-crosshair"
+      >
+        <div className="relative w-48 h-48">
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-naranja/70 transform -translate-y-1/2" />
+          <div className="absolute top-0 left-1/2 w-0.5 h-full bg-naranja/70 transform -translate-x-1/2" />
+          <div className="absolute inset-0 border-2 border-naranja/40 rounded-full" />
+          <div className="absolute top-[10%] left-[10%] w-[80%] h-[80%] border border-naranja/30 rounded-full" />
+          <div className="absolute top-[20%] left-[20%] w-[60%] h-[60%] border border-naranja/20 rounded-full" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TheGrid() {
+  return (
+    <div className="grid-lines absolute inset-0 pointer-events-none z-0">
+      {Array.from({ length: 10 }, (_, i) => (
+        <div key={`container${i}`}>
+          <div
+            key={`h${i}`}
+            className="absolute w-full h-px bg-gray-500/10"
+            style={{ top: `${(i + 1) * 10}%` }}
+          ></div>
+          <div
+            key={`v${i}`}
+            className="absolute w-px h-full bg-gray-500/10"
+            style={{ left: `${(i + 1) * 10}%` }}
+          ></div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -177,25 +203,5 @@ function Infopan() {
         </div>
       </div>
     </aside>
-  );
-}
-
-function Planetoid() {
-  return (
-    <div className="relative flex justify-center items-center w-full h-full border border-steel">
-      <SPhere />
-      <div
-        className="absolute inset-0 flex justify-center items-center pointer-events-none z-10"
-        id="planetary-core-crosshair"
-      >
-        <div className="relative w-48 h-48">
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-naranja/70 transform -translate-y-1/2" />
-          <div className="absolute top-0 left-1/2 w-0.5 h-full bg-naranja/70 transform -translate-x-1/2" />
-          <div className="absolute inset-0 border-2 border-naranja/40 rounded-full" />
-          <div className="absolute top-[10%] left-[10%] w-[80%] h-[80%] border border-naranja/30 rounded-full" />
-          <div className="absolute top-[20%] left-[20%] w-[60%] h-[60%] border border-naranja/20 rounded-full" />
-        </div>
-      </div>
-    </div>
   );
 }
