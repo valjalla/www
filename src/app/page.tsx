@@ -54,22 +54,13 @@ function Footer() {
       data-targetting="no-crosshair"
     >
       <div>
-        <span className="text-xs text-gris">{'>' + ' '}</span>
+        <span className="text-xs text-gris">{">" + " "}</span>
         <span className="text-xs text-naranja">v{version}</span>
       </div>
-      <div className="space-x-4">
-        <a
-          className="text-naranja font-semibold"
-          href="https://github.com/valjalla"
-        >
-          github
-        </a>
-        <a
-          className="text-naranja font-semibold"
-          href="https://www.linkedin.com/in/alexander-swanson"
-        >
-          linkedin
-        </a>
+      <div className="space-x-4 text-naranja font-semibold animate-warning">
+        <a href="https://github.com/valjalla">github</a>
+        <a href="https://www.linkedin.com/in/alexander-swanson">linkedin</a>
+        <a href="mailto:alexanderjswanson@icloud.com">email</a>
       </div>
       <div />
     </footer>
@@ -79,33 +70,26 @@ function Footer() {
 function SidePanel() {
   return (
     <aside className="w-[35%] border border-steel p-4 text-naranja overflow-y-auto">
-      <h2 className="text-xl font-semibold tracking-wider text-naranja">alexander</h2>
-      <p className="label mb-4 text-gris">engi</p>
+      <h2 className="text-2xl font-semibold tracking-wider text-naranja">alexander</h2>
+      <p className="label mb-4 text-azul">engi</p>
       <div className="space-y-4">
-        <div>
-          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">ABOUT</h3>
-          <ul className="list-inside space-y-1 text-sm">
-            <li className="text-azul">
-              programmer @ usa. industry ~ 2020. c, js, ts, py, swift. currently messing with raylib and game dev.
-            </li>
-          </ul>
-        </div>
+        <p className="text-sm text-gris">
+          programmer @ usa. industry ~ 2020. c, go, js, ts, py, swift. messing with raylib and game dev.
+        </p>
+
+        <p className="text-sm text-gris">
+          currently reading through{" "}
+          <a
+            className="text-azul"
+            href="http://neuralnetworksanddeeplearning.com/"
+          >
+            neilsen's book
+          </a>{" "}
+          on neural networks and deep learning.
+        </p>
 
         <div>
-          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">PROJECTS</h3>
-          <p className="text-sm text-value">
-            Current scan reveals unusual patterns in the planetary core. Further investigation required.
-          </p>
-          <div className="mt-2 flex items-center">
-            <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-            <span className="text-xs text-azul">Active monitoring</span>
-          </div>
-        </div>
-
-        <div className="border-t border-naranja pt-3">
-          <h3 className="text-lg mb-2 text-naranja">Access Level</h3>
-          <p className="text-sm text-gris">CLASSIFIED - NERV Personnel Only</p>
-          <p className="text-xs mt-2 text-naranja/80 animate-warning">WARNING: Unauthorized access will be prosecuted</p>
+          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">contact</h3>
         </div>
       </div>
     </aside>

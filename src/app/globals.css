@@ -52,6 +52,13 @@ h3 {
   font-weight: 600;
 }
 
+h3:hover {
+  background-color: rgba(255, 72, 0, 0.2);
+  outline: 1px solid rgba(255, 72, 0, 0.4);
+  transition: all 0.05s ease;
+  color: var(--color-naranja);
+}
+
 a:hover {
   cursor:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='0.75' fill='%2300ffff'/><line x1='12' y1='3' x2='12' y2='21' stroke='%2300ffff' stroke-width='1.5'/><line x1='3' y1='12' x2='21' y2='12' stroke='%2300ffff' stroke-width='1.5'/></svg>")
