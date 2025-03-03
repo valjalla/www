@@ -1,4 +1,5 @@
 import { HexaGrid, SPhere, FocusSpray } from "./ui";
+import { version } from "../../package.json";
 
 export default function App() {
   return (
@@ -49,21 +50,28 @@ function Header() {
 function Footer() {
   return (
     <footer
-      className="flex space-x-4 justify-center items-center w-full border border-steel h-12 px-4"
+      className="flex space-x-4 justify-between items-center w-full border border-steel h-12 px-4"
       data-targetting="no-crosshair"
     >
-      <a
-        className="text-naranja font-semibold animate-warning"
-        href="https://github.com/valjalla"
-      >
-        github
-      </a>
-      <a
-        className="text-naranja font-semibold animate-warning"
-        href="https://www.linkedin.com/in/alexander-swanson"
-      >
-        linkedin
-      </a>
+      <div>
+        <span className="text-xs text-gris">{'>' + ' '}</span>
+        <span className="text-xs text-naranja">v{version}</span>
+      </div>
+      <div className="space-x-4">
+        <a
+          className="text-naranja font-semibold"
+          href="https://github.com/valjalla"
+        >
+          github
+        </a>
+        <a
+          className="text-naranja font-semibold"
+          href="https://www.linkedin.com/in/alexander-swanson"
+        >
+          linkedin
+        </a>
+      </div>
+      <div />
     </footer>
   );
 }
@@ -71,15 +79,14 @@ function Footer() {
 function SidePanel() {
   return (
     <aside className="w-[35%] border border-steel p-4 text-naranja overflow-y-auto">
-      <h2 className="text-xl font-semibold tracking-wider text-naranja">alexander swanson</h2>
-      <p className="label mb-4 text-azul">engineer @ software</p>
+      <h2 className="text-xl font-semibold tracking-wider text-naranja">alexander</h2>
+      <p className="label mb-4 text-gris">engi</p>
       <div className="space-y-4">
         <div>
           <h3 className="text-lg mb-2 text-naranja border-b border-naranja">ABOUT</h3>
           <ul className="list-inside space-y-1 text-sm">
             <li className="text-azul">
-              5 yrs of experience. bachelor's degree in computer science. fan of typescript, python, c, and swift. currently
-              tinkering with raylib and 3d graphics.
+              programmer @ usa. industry ~ 2020. c, js, ts, py, swift. currently messing with raylib and game dev.
             </li>
           </ul>
         </div>
