@@ -33,6 +33,12 @@ function Header() {
 }
 
 function Footer() {
+  const links = [
+    { name: "github", href: "https://github.com/valjalla" },
+    { name: "linkedin", href: "https://www.linkedin.com/in/alexander-swanson" },
+    { name: "email", href: "mailto:alexanderjswanson@icloud.com" },
+  ];
+
   return (
     <footer
       className="flex space-x-4 justify-between items-center w-full border border-steel h-12 px-4"
@@ -43,9 +49,15 @@ function Footer() {
         <span className="text-xs text-naranja animate-warning">v{version}</span>
       </div>
       <div className="space-x-4 text-naranja font-semibold animate-warning">
-        <a href="https://github.com/valjalla">github</a>
-        <a href="https://www.linkedin.com/in/alexander-swanson">linkedin</a>
-        <a href="mailto:alexanderjswanson@icloud.com">email</a>
+        {links.map(({ name, href }) => (
+          <a
+            href={href}
+            key={name}
+            className="linkos-naranja"
+          >
+            {name}
+          </a>
+        ))}
       </div>
       <div />
     </footer>
@@ -121,6 +133,31 @@ function TheGrid() {
 }
 
 function Infopan() {
+  const log = [
+    {
+      href: "http://neuralnetworksanddeeplearning.com/",
+      title: "neural networks and deep learning / nielsen",
+      description:
+        "excellent intro to neural nets. great first principles approach to the math and theory. lots of good formula derivations.",
+    },
+    {
+      href: "https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)",
+      title: "the three body problem / liu",
+      description:
+        "excellent hard sci-fi. great world building, interesting characters. very unique take on the first contact trope.",
+    },
+    {
+      href: "https://en.wikipedia.org/wiki/Contact_(novel)",
+      title: "contact / sagan",
+      description: "classic.",
+    },
+    {
+      href: "https://en.wikipedia.org/wiki/A_Dance_with_Dragons",
+      title: "a dance with dragons / g.r.r.m.",
+      description: "the last good book in the series.",
+    },
+  ];
+
   return (
     <aside className="w-[35%] border border-steel p-4 text-naranja overflow-y-auto">
       <h2 className="text-2xl font-semibold tracking-wider text-naranja uppercase">alexander</h2>
@@ -146,47 +183,22 @@ function Infopan() {
           <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LOG</h3>
           <p className="text-sm text-gris uppercase mb-4">reading/read recently</p>
           <ul className="text-sm text-gris space-y-6">
-            <li>
-              <Link href="http://neuralnetworksanddeeplearning.com/"># neural networks and deep learning / nielsen</Link>
-              <p>
-                excellent intro to neural nets. great first principles approach to the math and theory. lots of good formula
-                derivations.
-              </p>
-            </li>
-
-            <li>
-              <Link href="https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)"># the three body problem / liu</Link>
-              <p>
-                excellent hard sci-fi. great world building, interesting characters. very unique take on the first contact
-                trope.
-              </p>
-            </li>
-
-            <li>
-              <Link href="https://en.wikipedia.org/wiki/Contact_(novel)"># contact / sagan</Link>
-              <p>classic.</p>
-            </li>
-
-            <li>
-              <Link href="https://en.wikipedia.org/wiki/A_Dance_with_Dragons"># a dance with dragons / g.r.r.m.</Link>
-              <p>the last good book in the series.</p>
-            </li>
+            {log.map((book, index) => (
+              <li key={index}>
+                <a
+                  href={book.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="linkos-azul uppercase"
+                >
+                  # {book.title}
+                </a>
+                <p>{book.description}</p>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
     </aside>
-  );
-}
-
-function Link({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      className="linkos"
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {children}
-    </a>
   );
 }

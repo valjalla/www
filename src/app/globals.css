@@ -12,6 +12,10 @@
   --color-value: var(--color-azul);
 
   --animate-warning: warning-blink 1s infinite;
+  
+  --outline-naranja: 1px solid var(--color-naranja);
+  --outline-gris: 1px solid var(--color-gris);
+  --outline-azul: 1px solid var(--color-azul);
 }
 
 @layer utilities {
@@ -29,28 +33,23 @@
 }
 
 @layer components {
-  .highlightable-naranja {
-    background-color: rgba(255, 72, 0, 0.2);
-    outline: 1px solid rgba(255, 72, 0, 0.4);
-    transition: all 0.1s ease;
-    color: var(--color-naranja);
-  }
-
-  .highlightable-gris {
-    background-color: rgba(170, 170, 170, 0.2);
-    outline: 1px solid rgba(170, 170, 170, 0.4);
-    transition: all 0.1s ease;
-    color: var(--color-gris);
-  }
-
-  .linkos {
+  .linkos-azul {
     color: var(--color-azul);
-    text-transform: uppercase;
     &:hover {
       background-color: rgba(0, 255, 255, 0.2);
       outline: 1px solid rgba(0, 255, 255, 0.4);
       transition: all 0.1s ease;
       color: var(--color-azul);
+    }
+  }
+
+  .linkos-naranja {
+    color: var(--color-naranja);
+    &:hover {
+      background-color: rgba(255, 72, 0, 0.2);
+      outline: 1px solid rgba(255, 72, 0, 0.4);
+      transition: all 0.1s ease;
+      color: var(--color-naranja);
     }
   }
 }
