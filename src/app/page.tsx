@@ -123,8 +123,8 @@ function TheGrid() {
 function Infopan() {
   return (
     <aside className="w-[35%] border border-steel p-4 text-naranja overflow-y-auto">
-      <h2 className="text-2xl font-semibold tracking-wider text-naranja">alexander</h2>
-      <p className="label mb-4 text-azul">engi</p>
+      <h2 className="text-2xl font-semibold tracking-wider text-naranja uppercase">alexander</h2>
+      <p className="label mb-4 text-azul uppercase">engi</p>
       <div className="space-y-4">
         <div className="space-y-4 text-sm text-gris">
           <p>programmer @ usa. industry ~ 2020. c, go, js, ts, py, swift. messing with raylib and game dev.</p>
@@ -143,18 +143,11 @@ function Infopan() {
           <p>you can learn anything in two weeks.</p>
         </div>
         <div>
-          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LITERATURE</h3>
+          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LOG</h3>
           <p className="text-sm text-gris uppercase mb-4">reading/read recently</p>
           <ul className="text-sm text-gris space-y-6">
             <li>
-              <a
-                className="text-azul uppercase"
-                href="http://neuralnetworksanddeeplearning.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                # neural networks and deep learning / nielsen
-              </a>
+              <Link href="http://neuralnetworksanddeeplearning.com/"># neural networks and deep learning / nielsen</Link>
               <p>
                 excellent intro to neural nets. great first principles approach to the math and theory. lots of good formula
                 derivations.
@@ -162,14 +155,7 @@ function Infopan() {
             </li>
 
             <li>
-              <a
-                className="text-azul uppercase"
-                href="https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                # the three body problem / liu
-              </a>
+              <Link href="https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)"># the three body problem / liu</Link>
               <p>
                 excellent hard sci-fi. great world building, interesting characters. very unique take on the first contact
                 trope.
@@ -177,31 +163,30 @@ function Infopan() {
             </li>
 
             <li>
-              <a
-                className="text-azul uppercase"
-                href="https://en.wikipedia.org/wiki/Contact_(novel)"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                # contact / sagan
-              </a>
+              <Link href="https://en.wikipedia.org/wiki/Contact_(novel)"># contact / sagan</Link>
               <p>classic.</p>
             </li>
 
             <li>
-              <a
-                className="text-azul uppercase"
-                href="https://en.wikipedia.org/wiki/A_Dance_with_Dragons"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                # a dance with dragons / g.r.r.m.
-              </a>
+              <Link href="https://en.wikipedia.org/wiki/A_Dance_with_Dragons"># a dance with dragons / g.r.r.m.</Link>
               <p>the last good book in the series.</p>
             </li>
           </ul>
         </div>
       </div>
     </aside>
+  );
+}
+
+function Link({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      className="linkos"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
   );
 }
