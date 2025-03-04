@@ -132,12 +132,23 @@ function TheGrid() {
   );
 }
 
+type INFO = {
+  href: string;
+  title?: string;
+  description?: string;
+}
+
 function INFOpan() {
-  const log = [
+  const log: INFO[] = [
     {
       href: "https://www.construction-physics.com/p/why-its-so-hard-to-build-a-jet-engine",
       title: "why it's so hard to build a jet engine",
       description: "interesting, short article on present day tech limits on jet production.",
+    },
+    {
+      href: "https://www.youtube.com/watch?v=p8u_k2LIZyo",
+      title: "fast inverse square root",
+      description: "cool vid on the insane quake 3 fast inverse square root function. 0x5f3759df.",
     },
     {
       href: "http://neuralnetworksanddeeplearning.com/",
