@@ -1,38 +1,38 @@
-import { HexaGrid, SPhere, FocusSpray } from "./ui";
+import { HEXAgrid, SPhere, FocusSpray } from "./ui";
 import { version } from "../../package.json";
 
-export default function App() {
+export default function main() {
   return (
     <div className="h-screen p-4 flex flex-col items-center">
       <div className="w-full max-w-[1600px] flex-1 flex flex-col">
-        <Header />
+        <HEader />
         <div className="bg-black/70 flex-1 flex flex-col space-y-4 my-4">
           <div className="flex flex-1 overflow-hidden space-x-4">
             <main className="flex-1 relative">
-              <Planetoid />
-              <AlienChars />
+              <PlanetOId />
+              <XYlochars />
               <TheGrid />
               <FocusSpray />
             </main>
-            <Infopan />
+            <INFOpan />
           </div>
         </div>
-        <Footer />
+        <FooteR />
       </div>
     </div>
   );
 }
 
-function Header() {
+function HEader() {
   return (
     <header className="w-full border border-steel h-16 flex justify-between items-center px-4">
       <h1 className="text-2xl font-semibold tracking-wider text-naranja animate-warning">λ</h1>
-      <HexaGrid />
+      <HEXAgrid />
     </header>
   );
 }
 
-function Footer() {
+function FooteR() {
   const links = [
     { name: "github", href: "https://github.com/valjalla" },
     { name: "linkedin", href: "https://www.linkedin.com/in/alexander-swanson" },
@@ -64,7 +64,7 @@ function Footer() {
   );
 }
 
-function AlienChars() {
+function XYlochars() {
   const hebrewChars = "אבגדהוזחטיכלמנסעפצקרשת";
   const greekChars = "αβδεζηθλμξπρφχψω";
   const cyrillicChars = "бгджзлфцэюя";
@@ -91,7 +91,7 @@ function AlienChars() {
   );
 }
 
-function Planetoid() {
+function PlanetOId() {
   return (
     <div className="relative flex justify-center items-center w-full h-full border border-steel">
       <SPhere />
@@ -132,7 +132,7 @@ function TheGrid() {
   );
 }
 
-function Infopan() {
+function INFOpan() {
   const log = [
     {
       href: "http://neuralnetworksanddeeplearning.com/",

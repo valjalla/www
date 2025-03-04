@@ -96,7 +96,7 @@ export function SPhere() {
   );
 }
 
-export function HexaGrid() {
+export function HEXAgrid() {
   const [activeHexagons, setActiveHexagons] = useState([true, false, true, false, true]);
 
   useEffect(() => {
