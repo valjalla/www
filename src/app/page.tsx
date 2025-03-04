@@ -135,6 +135,11 @@ function TheGrid() {
 function INFOpan() {
   const log = [
     {
+      href: "https://www.construction-physics.com/p/why-its-so-hard-to-build-a-jet-engine",
+      title: "why it's so hard to build a jet engine",
+      description: "interesting, short article on present day tech limits on jet production.",
+    },
+    {
       href: "http://neuralnetworksanddeeplearning.com/",
       title: "neural networks and deep learning / nielsen",
       description:
@@ -164,7 +169,7 @@ function INFOpan() {
       <p className="label mb-4 text-azul uppercase">engi</p>
       <div className="space-y-4">
         <div className="space-y-4 text-sm text-gris">
-          <p>programmer @ usa. industry ~ 2020. c, go, js, ts, py, swift. messing with raylib and game dev.</p>
+          <p>software engineer @ usa. industry ~ 2020. c, go, js, ts, py, swift. messing with raylib and game dev.</p>
           <p>
             currently reading through{" "}
             <a
