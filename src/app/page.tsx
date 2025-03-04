@@ -54,8 +54,8 @@ function Footer() {
 
 function AlienChars() {
   const hebrewChars = "אבגדהוזחטיכלמנסעפצקרשת";
-  const greekChars = "αβγδεζηθλμνξπρφχψω";
-  const cyrillicChars = "бвгджзклпфцчьэюя";
+  const greekChars = "αβδεζηθλμξπρφχψω";
+  const cyrillicChars = "бгджзлфцэюя";
   const alienChars = hebrewChars + greekChars + cyrillicChars;
 
   return (
