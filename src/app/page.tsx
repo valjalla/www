@@ -40,10 +40,7 @@ function FooteR() {
   ];
 
   return (
-    <footer
-      className="flex space-x-4 justify-between items-center w-full border border-steel h-12 px-4"
-      data-targetting="no-crosshair"
-    >
+    <footer className="flex space-x-4 justify-between items-center w-full border border-steel h-12 px-4">
       <div>
         <span className="text-xs text-gris">{">" + " "}</span>
         <span className="text-xs text-naranja animate-warning">v{version}</span>
@@ -136,7 +133,7 @@ type INFO = {
   href: string;
   title?: string;
   description?: string;
-}
+};
 
 function INFOpan() {
   const log: INFO[] = [
