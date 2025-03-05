@@ -10,7 +10,7 @@ export default function main() {
           <div className="flex flex-1 overflow-hidden space-x-4">
             <main className="flex-1 relative">
               <PlanetOId />
-              <XYlochars />
+              <XEnoscript />
               <TheGrid />
               <FocusSpray />
             </main>
@@ -61,7 +61,7 @@ function FooteR() {
   );
 }
 
-function XYlochars() {
+function XEnoscript() {
   const hebrewChars = "אבגדהוזחטיכלמנסעפצקרשת";
   const greekChars = "αβδεζηθλμξπρφχψω";
   const cyrillicChars = "бгджзлфцэюя";
