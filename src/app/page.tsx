@@ -186,7 +186,7 @@ function INFOpan() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              neilsen's book
+              {"neilsen's book"}
             </a>{" "}
             on neural networks and deep learning.
           </p>
