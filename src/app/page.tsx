@@ -128,8 +128,8 @@ function INFOpan() {
   const log: INFO[] = [
     {
       href: "https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking",
-      title: "valve source multiplayer networking",
-      description: "gamedev is actual sorcery"
+      title: "source multiplayer networking / valve",
+      description: "gamedev is true sorcery"
     },
     {
       href: "https://www.construction-physics.com/p/why-its-so-hard-to-build-a-jet-engine",
