@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback, MouseEvent } from "react";
+import { useState, useEffect, useRef, useCallback, type MouseEvent } from "react";
 import * as THREE from "three";
 
 export function SPhere() {
@@ -38,7 +38,7 @@ export function SPhere() {
     const lineMaterial = new THREE.LineBasicMaterial({
       color: 0x00ffff,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.4
     });
     const wireframeMesh = new THREE.LineSegments(wireframe, lineMaterial);
 
@@ -48,7 +48,7 @@ export function SPhere() {
       emissive: 0x001133,
       transparent: true,
       opacity: 0.35,
-      shininess: 100,
+      shininess: 100
     });
     const sphere = new THREE.Mesh(geometry, innerMaterial);
     sphere.scale.set(0.95, 0.95, 0.95);
@@ -88,12 +88,7 @@ export function SPhere() {
     };
   }, []);
 
-  return (
-    <div
-      ref={containerRef}
-      className="w-full h-full"
-    />
-  );
+  return <div ref={containerRef} className="w-full h-full" />;
 }
 
 export function HEXAgrid() {
@@ -115,10 +110,7 @@ export function HEXAgrid() {
   return (
     <div className="flex space-x-4">
       {activeHexagons.map((isActive, index) => (
-        <div
-          key={index}
-          className={`hexagon ${isActive ? "active" : ""}`}
-        ></div>
+        <div key={index} className={`hexagon ${isActive ? "active" : ""}`} />
       ))}
     </div>
   );
@@ -160,7 +152,7 @@ export function FocusSpray() {
     left: Math.min(startPoint.x, endPoint.x),
     top: Math.min(startPoint.y, endPoint.y),
     width: Math.abs(endPoint.x - startPoint.x),
-    height: Math.abs(endPoint.y - startPoint.y),
+    height: Math.abs(endPoint.y - startPoint.y)
   };
 
   return (
@@ -173,15 +165,102 @@ export function FocusSpray() {
       style={{ pointerEvents: "auto" }}
     >
       {isDragging && (
-        <div
-          className="absolute border border-naranja/60 bg-naranja/10 z-50"
-          style={selectionStyles}
-        >
+        <div className="absolute border border-naranja/60 bg-naranja/10 z-50" style={selectionStyles}>
           <div className="absolute top-0 right-0 text-xs text-naranja px-1">
             {Math.round(selectionStyles.width)} x {Math.round(selectionStyles.height)}
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+export function ImagePreview({
+  src,
+  alt,
+  isOpen,
+  onClose
+}: {
+  src: string;
+  alt?: string;
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+    
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscKey);
+    }
+    
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, [isOpen, onClose]);
+  
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200]" onClick={onClose}>
+      <div className="relative max-w-[90%] max-h-[90%]">
+        <button
+          className="absolute -top-10 right-0 text-naranja text-4xl"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+        >
+          ×
+        </button>
+        <img
+          src={src}
+          alt={alt || "Full size preview"}
+          className="max-w-full max-h-[80vh] object-contain border-2 border-azul/40 shadow-[0_0_15px_rgba(0,255,255,0.5)]"
+          onClick={(e) => e.stopPropagation()}
+        />
+      </div>
+    </div>
+  );
+}
+
+export function ClickableImage({
+  src,
+  width,
+  height,
+  alt,
+  className
+}: {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+  className?: string;
+}) {
+  const [showPreview, setShowPreview] = useState(false);
+
+  return (
+    <div className="relative">
+      <div 
+        className="absolute top-2 right-2 cursor-pointer z-[106] animate-warning"
+        onClick={() => setShowPreview(true)}
+      >
+        <div className="hexagon-small flex items-center justify-center text-azul">
+          <span className="text-xs font-bold">+</span>
+        </div>
+      </div>
+      <img
+        src={src}
+        width={width}
+        height={height}
+        alt={alt || ""}
+        className={`cursor-pointer ${className || ""}`}
+        onClick={() => setShowPreview(true)}
+      />
+      <ImagePreview src={src} alt={alt} isOpen={showPreview} onClose={() => setShowPreview(false)} />
     </div>
   );
 }

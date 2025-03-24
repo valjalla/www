@@ -1,4 +1,4 @@
-import { HEXAgrid, SPhere, FocusSpray } from "./ui";
+import { HEXAgrid, SPhere, FocusSpray, ClickableImage } from "./ui";
 import { version } from "../../package.json";
 
 export default function main() {
@@ -36,7 +36,7 @@ function FooteR() {
   const links = [
     { name: "github", href: "https://github.com/valjalla" },
     { name: "linkedin", href: "https://www.linkedin.com/in/alexander-swanson" },
-    { name: "email", href: "mailto:alexanderjswanson@icloud.com" },
+    { name: "email", href: "mailto:alexanderjswanson@icloud.com" }
   ];
 
   return (
@@ -47,11 +47,7 @@ function FooteR() {
       </div>
       <div className="space-x-4 text-naranja font-semibold animate-warning">
         {links.map(({ name, href }) => (
-          <a
-            href={href}
-            key={name}
-            className="linkos-naranja"
-          >
+          <a href={href} key={name} className="linkos-naranja">
             {name}
           </a>
         ))}
@@ -113,16 +109,8 @@ function TheGrid() {
     <div className="grid-lines absolute inset-0 pointer-events-none z-0">
       {Array.from({ length: 10 }, (_, i) => (
         <div key={`container${i}`}>
-          <div
-            key={`h${i}`}
-            className="absolute w-full h-px bg-gray-500/10"
-            style={{ top: `${(i + 1) * 10}%` }}
-          ></div>
-          <div
-            key={`v${i}`}
-            className="absolute w-px h-full bg-gray-500/10"
-            style={{ left: `${(i + 1) * 10}%` }}
-          ></div>
+          <div key={`h${i}`} className="absolute w-full h-px bg-gray-500/10" style={{ top: `${(i + 1) * 10}%` }} />
+          <div key={`v${i}`} className="absolute w-px h-full bg-gray-500/10" style={{ left: `${(i + 1) * 10}%` }} />
         </div>
       ))}
     </div>
@@ -133,6 +121,7 @@ type INFO = {
   href: string;
   title?: string;
   description?: string;
+  thumbnail?: string;
 };
 
 function INFOpan() {
@@ -140,35 +129,46 @@ function INFOpan() {
     {
       href: "https://www.construction-physics.com/p/why-its-so-hard-to-build-a-jet-engine",
       title: "why it's so hard to build a jet engine",
-      description: "interesting, short article on present day tech limits on jet production.",
+      description: "interesting, short article on present day tech limits on jet production."
     },
     {
       href: "https://www.youtube.com/watch?v=p8u_k2LIZyo",
       title: "fast inverse square root",
-      description: "cool vid on the insane quake 3 fast inverse square root function. 0x5f3759df.",
+      description: "cool vid on the insane quake 3 fast inverse square root function. 0x5f3759df."
     },
     {
       href: "http://neuralnetworksanddeeplearning.com/",
       title: "neural networks and deep learning / nielsen",
       description:
-        "excellent intro to neural nets. great first principles approach to the math and theory. lots of good formula derivations.",
+        "excellent intro to neural nets. great first principles approach to the math and theory. lots of good formula derivations."
     },
     {
       href: "https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)",
       title: "the three body problem / liu",
       description:
-        "excellent hard sci-fi. great world building, interesting characters. very unique take on the first contact trope.",
+        "excellent hard sci-fi. great world building, interesting characters. very unique take on the first contact trope."
     },
     {
       href: "https://en.wikipedia.org/wiki/Contact_(novel)",
       title: "contact / sagan",
-      description: "classic.",
+      description: "classic."
     },
     {
       href: "https://en.wikipedia.org/wiki/A_Dance_with_Dragons",
       title: "a dance with dragons / g.r.r.m.",
-      description: "the last good book in the series.",
-    },
+      description: "the last good book in the series."
+    }
+  ];
+
+  const projects: INFO[] = [
+    {
+      title: "retro3d",
+      href: "https://retro3d.swandog.dev",
+      description:
+        "A retro-futuristic web app for inspecting and tinkering with 3D models in style! Built with React and Three.js. " +
+        "Abilty to load in any model from Sketchfab under construction...",
+      thumbnail: "/retro3d.png"
+    }
   ];
 
   return (
@@ -193,17 +193,44 @@ function INFOpan() {
           <p>you can learn anything in two weeks.</p>
         </div>
         <div>
+          <h3 className="text-lg mb-2 text-naranja border-b border-naranja">PROJECTS</h3>
+          <ul className="text-sm text-gris space-y-6">
+            {projects.map((project, index) => (
+              <li key={index} className="flex justify-between space-x-4">
+                <div className="flex-1">
+                  <span className="text-xs text-naranja/50">{">" + " "}</span>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkos-azul uppercase underline underline-offset-3"
+                  >
+                    {project.title}
+                  </a>
+                  <p className="mt-1">{project.description}</p>
+                </div>
+                {project.thumbnail && (
+                  <div className="z-[105]">
+                    <ClickableImage
+                      src={project.thumbnail}
+                      width={300}
+                      height={250}
+                      alt={`${project.title} screenshot`}
+                      className="w-[250px] h-auto object-contain border border-steel mt-4"
+                    />
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
           <h3 className="text-lg mb-2 text-naranja border-b border-naranja">LOG</h3>
           <p className="text-sm text-gris uppercase mb-4">reading/read recently</p>
           <ul className="text-sm text-gris space-y-6">
             {log.map((book, index) => (
               <li key={index}>
-                <a
-                  href={book.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="linkos-azul uppercase"
-                >
+                <a href={book.href} target="_blank" rel="noopener noreferrer" className="linkos-azul uppercase">
                   # {book.title}
                 </a>
                 <p>{book.description}</p>

@@ -74,8 +74,11 @@ body {
     crosshair;
 }
 
+h2,
 h3 {
   font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
   &:hover {
     background-color: rgba(255, 72, 0, 0.2);
     outline: 1px solid rgba(255, 72, 0, 0.4);
@@ -84,7 +87,7 @@ h3 {
   }
 }
 
-a {
+a, button {
   &:hover {
     cursor:
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='0.75' fill='%2300ffff'/><line x1='12' y1='3' x2='12' y2='21' stroke='%2300ffff' stroke-width='1.5'/><line x1='3' y1='12' x2='21' y2='12' stroke='%2300ffff' stroke-width='1.5'/></svg>")
@@ -141,6 +144,19 @@ body::after {
 
 .hexagon.active {
   background-color: rgba(0, 255, 255, 0.3);
+}
+
+.hexagon-small {
+  width: 20px;
+  height: 23px;
+  position: relative;
+  border: 1px solid #00ffff;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
+.hexagon-small:hover {
+  transform: scale(1.1);
 }
 
 .animate-blink {
