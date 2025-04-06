@@ -171,7 +171,7 @@ function INFOpan() {
       href: "https://retro3d.swandog.dev",
       description:
         "A retro-futuristic web app for inspecting and tinkering with 3D models in style! Built with React and Three.js. " +
-        "Abilty to load in any model from Sketchfab under construction...",
+        "You can also login with Sketchfab and search and import any model.",
       thumbnail: "/retro3d.png"
     }
   ];
